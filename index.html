@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Achiver Club - Premium Work From Home Registration</title>
+  <meta name="description" content="Register for Achiver Club's exclusive work-from-home opportunities" />
+  <style>
+    /* Premium Color Scheme: 70% white, 20% yellow, 10% black */
+    :root {
+      --premium-white: #ffffff;
+      --premium-yellow: #FFD700;
+      --premium-gold: #FFC107;
+      --premium-black: #1a1a1a;
+      --premium-gray: #2c2c2c;
+      --premium-light-gray: #f8f9fa;
+      --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.07);
+      --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.12);
+      --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, var(--premium-light-gray) 0%, var(--premium-white) 100%);
+      color: var(--premium-black);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+    }
+
+    /* Premium Container */
+    .premium-container {
+      background: var(--premium-white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      max-width: 480px;
+      width: 100%;
+      transform: translateY(0);
+      transition: var(--transition);
+      animation: containerSlideUp 0.8s ease-out;
+    }
+
+    .premium-container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Premium Header */
+    .premium-header {
+      background: linear-gradient(135deg, var(--premium-yellow) 0%, var(--premium-gold) 100%);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: shine 3s infinite;
+    }
+
+    .logo-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.875rem;
+      font-weight: 800;
+      font-size: 2rem;
+      color: var(--premium-black);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--premium-black);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--premium-yellow);
+      font-weight: 900;
+      font-size: 1.5rem;
+      transform: rotate(0deg);
+      transition: var(--transition);
+    }
+
+    .logo:hover .logo-icon {
+      transform: rotate(360deg);
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--premium-gray);
+      margin-top: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Premium Form */
+    .premium-form {
+      padding: 2.5rem 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+      position: relative;
+      animation: fadeInUp 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .form-group:nth-child(1) { animation-delay: 0.1s; }
+    .form-group:nth-child(2) { animation-delay: 0.2s; }
+    .form-group:nth-child(3) { animation-delay: 0.3s; }
+    .form-group:nth-child(4) { animation-delay: 0.4s; }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: var(--premium-gray);
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      font-size: 1rem;
+      border: 2px solid #e1e5e9;
+      border-radius: 12px;
+      background: var(--premium-white);
+      color: var(--premium-black);
+      transition: var(--transition);
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--premium-yellow);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+      transform: translateY(-1px);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #a0aec0;
+    }
+
+    .error-message {
+      color: #e53e3e;
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      display: none;
+      animation: shake 0.3s ease-in-out;
+    }
+
+    /* Premium Button */
+    .premium-btn {
+      background: linear-gradient(135deg, var(--premium-yellow) 0%, var(--premium-gold) 100%);
+      color: var(--premium-black);
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 1.25rem 2rem;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .premium-btn:hover::before {
+      left: 100%;
+    }
+
+    .premium-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    }
+
+    .premium-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Success Message */
+    #success-message {
+      text-align: center;
+      color: var(--premium-black);
+      font-weight: 600;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(255, 215, 0, 0.1);
+      border-radius: 12px;
+      border: 2px solid var(--premium-yellow);
+      display: none;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    /* Animations */
+    @keyframes containerSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    @keyframes shine {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      .premium-container {
+        margin: 1rem;
+      }
+      
+      .premium-header {
+        padding: 2rem 1.5rem;
+      }
+      
+      .premium-form {
+        padding: 2rem 1.5rem;
+      }
+      
+      .logo {
+        font-size: 1.7rem;
+      }
+      
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+      }
+    }
+
+    /* Loading state for button */
+    .premium-btn.loading {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .premium-btn.loading::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin: -10px 0 0 -10px;
+      border: 2px solid transparent;
+      border-top: 2px solid var(--premium-black);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="premium-container">
+    <div class="premium-header">
+      <div class="logo-container">
+        <div class="logo">
+          <div class="logo-icon">A</div>
+          Achiver Club
+        </div>
+        <div class="subtitle">By Mr Kanha</div>
+      </div>
+    </div>
+
+    <div class="premium-form">
+      <form id="registrationForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required autocomplete="name" />
+          <div class="error-message" id="errorFullName">Please enter your full name</div>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age *</label>
+          <input type="number" id="age" name="age" placeholder="Your age (18+)" min="18" max="120" required />
+          <div class="error-message" id="errorAge">You must be at least 18 years old</div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address *</label>
+          <textarea id="address" name="address" rows="3" placeholder="Enter your complete address" required></textarea>
+          <div class="error-message" id="errorAddress">Please enter your address</div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="10-digit phone number" pattern="[0-9]{10}" required autocomplete="tel" />
+          <div class="error-message" id="errorPhone">Please enter a valid 10-digit number</div>
+        </div>
+
+        <button type="submit" class="premium-btn" id="submitBtn">
+          Join Achiver Club
+        </button>
+      </form>
+
+      <div id="success-message" role="alert" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script>
+    // Owner's WhatsApp number (international format without + sign)
+    const whatsappNumber = "919668086189";
+
+    // Form and input elements
+    const form = document.getElementById('registrationForm');
+    const fullNameInput = document.getElementById('fullName');
+    const ageInput = document.getElementById('age');
+    const addressInput = document.getElementById('address');
+    const phoneInput = document.getElementById('phone');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Error message elements
+    const errorFullName = document.getElementById('errorFullName');
+    const errorAge = document.getElementById('errorAge');
+    const errorAddress = document.getElementById('errorAddress');
+    const errorPhone = document.getElementById('errorPhone');
+
+    // Success message element
+    const successMessage = document.getElementById('success-message');
+
+    // Utility function to validate phone number (exactly 10 digits)
+    function isValidPhone(phone) {
+      return /^[0-9]{10}$/.test(phone);
+    }
+
+    // Validate form inputs and show/hide error messages
+    function validateForm() {
+      let valid = true;
+
+      // Validate Full Name (non-empty)
+      if (!fullNameInput.value.trim()) {
+        errorFullName.style.display = 'block';
+        valid = false;
+      } else {
+        errorFullName.style.display = 'none';
+      }
+
+      // Validate Age (>= 18)
+      const ageValue = Number(ageInput.value);
+      if (!ageInput.value || isNaN(ageValue) || ageValue < 18) {
+        errorAge.style.display = 'block';
+        valid = false;
+      } else {
+        errorAge.style.display = 'none';
+      }
+
+      // Validate Address (non-empty)
+      if (!addressInput.value.trim()) {
+        errorAddress.style.display = 'block';
+        valid = false;
+      } else {
+        errorAddress.style.display = 'none';
+      }
+
+      // Validate Phone Number (10 digits)
+      if (!isValidPhone(phoneInput.value.trim())) {
+        errorPhone.style.display = 'block';
+        valid = false;
+      } else {
+        errorPhone.style.display = 'none';
+      }
+
+      return valid;
+    }
+
+    // Show loading state
+    function setLoadingState(loading) {
+      if (loading) {
+        submitBtn.classList.add('loading');
+        submitBtn.textContent = '';
+      } else {
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = 'Join Achiver Club';
+      }
+    }
+
+    // On form submit
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      successMessage.style.display = 'none';
+
+      if (!validateForm()) {
+        // If validation fails, do not proceed
+        return;
+      }
+
+      // Show loading state
+      setLoadingState(true);
+
+      // Prepare WhatsApp message with user inputs
+      const name = fullNameInput.value.trim();
+      const age = ageInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const address = addressInput.value.trim();
+
+      const message = `Excuse me Sir, I am ${name}, interested in your work-from-home opportunity. I am ${age} years old. My number is ${phone}. My address is ${address}.`;
+
+      // WhatsApp URL with pre-filled message
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      // Show success message
+      successMessage.textContent = "✓ Registration successful! Redirecting to WhatsApp...";
+      successMessage.style.display = 'block';
+
+      // Open WhatsApp chat immediately (no delays)
+      window.open(whatsappURL, '_blank');
+      
+      // Reset loading state
+      setLoadingState(false);
+      
+      // Reset form after showing success message
+      setTimeout(() => {
+        form.reset();
+        successMessage.style.display = 'none';
+      }, 3000);
+    });
+
+    // Real-time validation feedback for better UX
+    const inputs = [fullNameInput, ageInput, addressInput, phoneInput];
+    const errorElements = [errorFullName, errorAge, errorAddress, errorPhone];
+
+    inputs.forEach((input, index) => {
+      input.addEventListener('input', () => {
+        if (input === phoneInput) {
+          if (isValidPhone(input.value.trim())) {
+            errorElements[index].style.display = 'none';
+          }
+        } else if (input.value.trim()) {
+          errorElements[index].style.display = 'none';
+        }
+      });
+    });
+
+    // Add focus animations
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        input.parentElement.style.transform = 'translateY(-2px)';
+      });
+      
+      input.addEventListener('blur', () => {
+        input.parentElement.style.transform = 'translateY(0)';
+      });
+    });
+
+    /*
+      === Optional Future Upgrade Suggestions ===
+      
+      1. Google Sheets Integration:
+         - Use Google Apps Script to create a web app endpoint
+         - Send form data via fetch() before WhatsApp redirect
+         
+      2. Firebase Firestore:
+         - Initialize Firebase in your project
+         - Write form data to Firestore collection
+         - Add error handling for failed writes
+         
+      3. Email Notifications:
+         - Send email to yourself on new registration
+         - Use EmailJS or similar service
+    */
+  </script>
+</body>
+</html>
+
